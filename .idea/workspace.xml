@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5eb74b52-2dbb-4cca-812e-a46db8aabb50" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2yBL4f1FbJl7GXnLiiGVeyOdlqK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiGatewayApplication.executor": "Run",
+    "Application.AuthenticationApplication.executor": "Run",
+    "Application.BillingPaymentServiceApplication.executor": "Run",
+    "Application.ConfigServerApplication.executor": "Run",
+    "Application.EurekaServerApplication.executor": "Run",
+    "Application.ReservationServiceApplication.executor": "Run",
+    "Application.RoomServiceApplication.executor": "Run",
+    "Application.StaffServiceApplication.executor": "Run",
+    "JUnit.BillControllerTest.executor": "Run",
+    "JUnit.BillServiceImplTest.executor": "Run",
+    "JUnit.BillServiceImplTest.testCreateBill_AlreadyPaid_ShouldReturnExistingSession.executor": "Run",
+    "JUnit.BillServiceImplTest.testCreateBill_NewBooking_Success.executor": "Run",
+    "JUnit.BookingControllerTest.executor": "Run",
+    "JUnit.BookingServiceImplTest.executor": "Run",
+    "JUnit.GuestControllerTest.executor": "Run",
+    "JUnit.GuestServiceImplTest.executor": "Run",
+    "JUnit.InventoryControllerTest.executor": "Run",
+    "JUnit.InventoryServiceImplTest.executor": "Run",
+    "JUnit.RoomControllerTest.executor": "Run",
+    "JUnit.RoomServiceImplTest.executor": "Run",
+    "JUnit.StaffControllerTest.executor": "Run",
+    "JUnit.StaffServiceApplicationTests.executor": "Run",
+    "JUnit.StaffServiceImplTest.executor": "Run",
+    "Maven.apigatewayservice [clean,install...].executor": "Run",
+    "Maven.apigatewayservice [clean,install].executor": "Run",
+    "Maven.apigatewayservice [spring-boot:build-info].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/bs410/OneDrive/Desktop/Online/billing-payment-service/src/test/java/com/hotel/billing_payment_service",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bs410\OneDrive\Desktop\Online\billing-payment-service\src\test\java\com\hotel\billing_payment_service" />
+      <recent name="C:\Users\bs410\OneDrive\Desktop\Online\reservation-service\src\test\java\com\hotel\reservation_service" />
+      <recent name="C:\Users\bs410\OneDrive\Desktop\Online\room-service\src\test\java\com\hotel\room_service" />
+      <recent name="C:\Users\bs410\OneDrive\Desktop\Online\staff-service\src\test\java\com\hotel\staff_service" />
+      <recent name="C:\Users\bs410\OneDrive\Desktop\Online\billing-payment-service\src\main\java\com\hotel\billing_payment_service\service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.hotel.billing_payment_service.service.imple" />
+      <recent name="com.hotel.billing_payment_service.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hotel.billing_payment_service.service.imple" />
+      <recent name="com.hotel.billing_payment_service.config" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install -DskipTests" />
+      <command value="mvn clean install" />
+      <command value="mvn spring-boot:build-info" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="BillServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="billing-payment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hotel.billing_payment_service.service.imple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hotel.billing_payment_service.service.imple" />
+      <option name="MAIN_CLASS_NAME" value="com.hotel.billing_payment_service.service.imple.BillServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BillServiceImplTest.testCreateBill_AlreadyPaid_ShouldReturnExistingSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="billing-payment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hotel.billing_payment_service.service.imple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hotel.billing_payment_service.service.imple" />
+      <option name="MAIN_CLASS_NAME" value="com.hotel.billing_payment_service.service.imple.BillServiceImplTest" />
+      <option name="METHOD_NAME" value="testCreateBill_AlreadyPaid_ShouldReturnExistingSession" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BillServiceImplTest.testCreateBill_NewBooking_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="billing-payment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hotel.billing_payment_service.service.imple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hotel.billing_payment_service.service.imple" />
+      <option name="MAIN_CLASS_NAME" value="com.hotel.billing_payment_service.service.imple.BillServiceImplTest" />
+      <option name="METHOD_NAME" value="testCreateBill_NewBooking_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BillServiceImplTest" />
+        <item itemvalue="JUnit.BillServiceImplTest.testCreateBill_NewBooking_Success" />
+        <item itemvalue="JUnit.BillServiceImplTest.testCreateBill_AlreadyPaid_ShouldReturnExistingSession" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5eb74b52-2dbb-4cca-812e-a46db8aabb50" name="Changes" comment="" />
+      <created>1749302830082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749302830082</updated>
+    </task>
+    <servers />
+  </component>
+</project>
