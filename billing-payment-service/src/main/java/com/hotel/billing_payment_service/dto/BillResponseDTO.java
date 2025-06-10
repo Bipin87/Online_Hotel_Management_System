@@ -25,4 +25,17 @@ public class BillResponseDTO {
 
     public BillResponseDTO(long l, long l1, String johnDoe, String session123, double v, String card, String pending, LocalDateTime now) {
     }
+
+    public void setPaymentMethod(String card) {
+    }
+
+    public void setCreatedAt(LocalDateTime now) {
+    }
+
+    public void setGeneratedAt(LocalDateTime now) {
+        
+    }
+
+    public void setAmount(double v) {
+    }
 }

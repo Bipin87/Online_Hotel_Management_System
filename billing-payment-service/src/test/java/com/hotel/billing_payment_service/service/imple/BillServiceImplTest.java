@@ -6,7 +6,6 @@ import com.hotel.billing_payment_service.exception.BillAlreadyPaidException;
 import com.hotel.billing_payment_service.exception.ResourceNotFoundException;
 import com.hotel.billing_payment_service.repository.BillRepository;
 import com.hotel.billing_payment_service.service.BookingServiceClient;
-import com.hotel.billing_payment_service.service.imple.PaymentService;
 import com.stripe.model.checkout.Session;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -52,31 +51,26 @@ class BillServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        // Mock Room & Guest Data
         roomResponseDto = new RoomResponseDto(1L, "101", "DELUXE", 150.0, true, Instant.now());
         guestResponseDTO = new GuestResponseDTO(1L, "John Doe", "john@example.com", "1234567890",
                 "123 Main St", "American", GuestResponseDTO.IdProofType.PASSPORT, "XYZ12345", Instant.now());
 
-        // Mock Booking Data
         bookingResponseDTO = new BookingResponseDTO(
                 1L, guestResponseDTO, roomResponseDto, LocalDate.now(), LocalDate.now().plusDays(2), 2, "PENDING");
 
-        // Mock Bill Data
         bill = new Bill(1L, 1L, "John Doe", 150.0, "CARD", "PENDING", LocalDateTime.now(), "session123");
 
-        // Mock Payment Session
         mockSession = new Session();
         mockSession.setId("session123");
         mockSession.setUrl("https://mock-payment-url.com");
 
-        // Mock Payment Response
         paymentResponse = new PaymentResponse("John Doe", "session123", "https://mock-payment-url.com");
     }
 
     @Test
     void testCreateBill_NewBooking_Success() throws Exception {
         when(bookingServiceClient.getBooking(1L)).thenReturn(bookingResponseDTO);
-        when(paymentService.createCheckoutSession(150.0, "INR", "John Doe", "john@example.com"))
+        when(paymentService.createCheckoutSession(eq(300.0), eq("INR"), eq("John Doe"), eq("john@example.com")))
                 .thenReturn(mockSession);
         when(billRepository.save(any(Bill.class))).thenReturn(bill);
 
@@ -98,15 +92,24 @@ class BillServiceImplTest {
         });
 
         assertEquals("Bill is already paid for booking ID: 1", exception.getMessage());
-
         verify(paymentService, never()).createCheckoutSession(anyDouble(), anyString(), anyString(), anyString());
     }
 
     @Test
     void testGetBill_Success() {
         when(billRepository.findById(1L)).thenReturn(Optional.of(bill));
-        when(modelMapper.map(bill, BillResponseDTO.class)).thenReturn(new BillResponseDTO(
-                1L, 1L, "John Doe", "session123", 150.0, "CARD", "PENDING", LocalDateTime.now()));
+
+        BillResponseDTO responseDTO = new BillResponseDTO();
+        responseDTO.setId(1L);
+        responseDTO.setBookingId(1L);
+        responseDTO.setCustomerName("John Doe");
+        responseDTO.setSessionId("session123");
+        responseDTO.setAmount(150.0);
+        responseDTO.setPaymentMode("CARD");
+        responseDTO.setPaymentStatus("PENDING");
+        responseDTO.setGeneratedAt(LocalDateTime.now());
+
+        when(modelMapper.map(bill, BillResponseDTO.class)).thenReturn(responseDTO);
 
         BillResponseDTO response = billService.getBill(1L);
 
@@ -117,15 +120,24 @@ class BillServiceImplTest {
     @Test
     void testGetBill_NotFound_ShouldThrowException() {
         when(billRepository.findById(1L)).thenReturn(Optional.empty());
-
         assertThrows(ResourceNotFoundException.class, () -> billService.getBill(1L));
     }
 
     @Test
     void testGetAllBills_Success() {
         when(billRepository.findAll()).thenReturn(List.of(bill));
-        when(modelMapper.map(bill, BillResponseDTO.class)).thenReturn(new BillResponseDTO(
-                1L, 1L, "John Doe", "session123", 150.0, "CARD", "PENDING", LocalDateTime.now()));
+
+        BillResponseDTO responseDTO = new BillResponseDTO();
+        responseDTO.setId(1L);
+        responseDTO.setBookingId(1L);
+        responseDTO.setCustomerName("John Doe");
+        responseDTO.setSessionId("session123");
+        responseDTO.setAmount(150.0);
+        responseDTO.setPaymentMode("CARD");
+        responseDTO.setPaymentStatus("PENDING");
+        responseDTO.setGeneratedAt(LocalDateTime.now());
+
+        when(modelMapper.map(bill, BillResponseDTO.class)).thenReturn(responseDTO);
 
         List<BillResponseDTO> bills = billService.getAllBills();
 

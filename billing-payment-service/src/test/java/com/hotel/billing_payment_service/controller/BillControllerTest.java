@@ -37,22 +37,20 @@ class BillControllerTest {
 
     @BeforeEach
     void setUp() {
-        billResponseDTO = new BillResponseDTO(
-                1L,
-                100L,
-                "John Doe",
-                "session123",
-                500.0,
-                "CARD",
-                "PENDING",
-                LocalDateTime.now()
-        );
+        billResponseDTO = new BillResponseDTO();
+        billResponseDTO.setId(1L);
+        billResponseDTO.setBookingId(100L);
+        billResponseDTO.setCustomerName("John Doe");
+        billResponseDTO.setSessionId("session123");
+        billResponseDTO.setTotalAmount(500.0);
+        billResponseDTO.setPaymentMethod("CARD");
+        billResponseDTO.setPaymentStatus("PENDING");
+        billResponseDTO.setCreatedAt(LocalDateTime.now());
 
-        paymentResponse = new PaymentResponse(
-                "John Doe",
-                "session123",
-                "https://payment-url.com"
-        );
+        paymentResponse = new PaymentResponse();
+        paymentResponse.setCustomerName("John Doe");
+        paymentResponse.setSessionId("session123");
+        paymentResponse.setSessionUrl("https://payment-url.com");
     }
 
     @Test
